@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function(event) {
+                $(".contacts").append("<div class='contact'><h3 class='contact-name displayed'>" + $(".first-name").val() + " " + $(".last-name").val() + "</h3><p class='contact-description not-displayed'>" + $(".description").val() + "</p></div>" )
+                event.preventDefault();
+            });
+            $("button").click(function() {
+                if ($(".first-name").val().length < 1 || $(".last-name").val().length < 1 || $(".description").val() < 1) {
+                    alert("Please complete all the info");
+                } else {
+                    $("form").submit();
+                    $("form").children().val("");
+                }                
+            });
+            $(".contacts").on("click", ".contact", function() {
+                $(this).children("p").slideToggle();
+            });
+        });
+    </script>    
+    <title>Contact Card</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Contact Card</h1>
+        <div class="form-and-button">
+            <form>
+                <h2>Please Enter A User</h2>
+                First Name: <input type="text" class="form-control first-name">
+                Last Name: <input type="text" class="form-control last-name">
+                Description: <textarea class="form-control comment description" rows="5"></textarea>
+            </form>
+            <button class="btn btn-primary">Add User</button>
+        </div>        
+        <div class="contacts">
+            <h2>Contacts</h2>
+        </div>
+    </div>
+</body>
+</html>

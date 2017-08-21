@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 1000px;
+    margin-left: 15%;
+}
+input {
+    display: block;
+}
+.form-and-button, .contacts {
+    width: 40%;
+    display: inline-block;
+}
+.contacts {
+    vertical-align: top;
+    margin-left: 19.5%;
+}
+button {
+    margin-top: 20px;
+
+}
+h1 {
+    margin-left: 35%;
+}
+h2 {
+    margin-bottom: 30px;
+}
+h3 {
+    color: #3573d6;
+}
+.not-displayed {
+    display: none;
+}
+.contact:hover {
+    cursor: pointer;
+}
+.contact {
+    margin-bottom: 5px;
+}
